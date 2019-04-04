@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Calculate</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/mystyle.css">
+</head>
+<body>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="/index.html">Home</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="/calculator.html">Calculator</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/favorites.html">Recents</a>
+  </li>
+</ul>
+<div id="app">
+<div class="submitEquation">
+  <h1>Choose the type of computation you want:</h1>
+  <div class="calculatorTypes">
+      <button class="computeTypes" v-on:click="derivativeCalculator()">Derive</button>
+      <button class="computeTypes" v-on:click="simplifyEquation()">Simplify</button>
+      <button class="computeTypes" v-on:click="factorEquation()">Factor</button>
+      <button class="computeTypes" v-on:click="integrationCalculator()">Integrate</button>
+      <button class="computeTypes" v-on:click="findZeroes()">Zeroes</button>
+      <button class="computeTypes" v-on:click="sin()">Sine</button>
+      <button class="computeTypes" v-on:click="cosine()">Cosine</button>
+      <button class="computeTypes" v-on:click="tangent()">Tangent</button>
+  </div>
+
+  <h1>{{computationChoice}}<h1>
+  <input id="mathInput" v-model="equation" type="text"></input><br><br>
+  <input id="mathSubmit" type="button" v-on:click="mathSubmit()" value="Solve"></input>
+</div>
+<div id="mathResults">
+<h2>{{this.current.result}}</h2>
+</div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted"><a href="https://github.com/jshirl10/Creative-Project-4.git">TA Link</a></span>
+  </div>
+</footer>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script text="type/javascript" src="/script.js"></script>
+</body>
+</html>
